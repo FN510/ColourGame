@@ -1,0 +1,78 @@
+body {
+	background-color: #232323;
+	margin: 0;
+	font-family:"Trebuchet MS";
+	text-transform: uppercase;
+}
+
+h1{
+	text-align: center;
+	padding-bottom: 0px;
+	width: 100%;
+	color: white;
+	background-color: burlywood;
+	font-style: sans-serif;
+	margin: 0;
+	font-size: 200%;
+	line-height: 1.2;
+	padding: 20px 0
+}
+.square {
+	height: 30%;
+	width: 30%;
+	padding-bottom: 30%;
+	float: left;
+	margin: 1.6%;
+	border-radius: 10%;
+	transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-webkit-transition: background-color 1s;
+}
+
+.container {
+	max-width: 600px;
+	margin: 20px auto;
+}
+
+#msg {
+	color: black;
+	font-size: 20px;
+	display: inline-block;
+	width: 20%;
+}
+
+#gameBar {
+	background-color: white;
+	text-align: center;
+}
+
+.selected {
+	background-color: burlywood;
+	color: white;
+}
+#RGB_title {
+	display: block;
+	font-size: 3rem;
+}
+
+button {
+	border-style: none;
+	font-family: 'Trebuchet MS';
+	color: burlywood;
+	background: none;
+	font-size: 1rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-top: 0px;
+	height: 100%;
+	padding-top: 5px;
+	transition: all 0.25s;
+	-moz-transition: all 0.25s;
+	-webkit-transition: all 0.25s;
+}
+button:hover {
+	background-color: burlywood;
+	color: white;
+	height: 50%
+}
