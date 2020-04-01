@@ -7,37 +7,39 @@ var square_selector = document.getElementsByClassName('square');
 var easy_mode = false;
 var num_squares= 6;
 
+var modes = document.querySelectorAll('.mode');
 
-colours = generateColours(6);
-for (var i=0; i<square_selector.length; i++) {
-	// add colours to square
-	console.log('new color: '+colours[i]);
-	square_selector[i].style.backgroundColor= colours[i]
-	square_selector[i].style.display = 'block';
-		
-}
+//start
+init();
 
-// squares click logic
-for (var i=0; i<square_selector.length; i++) {
-	// add click event listener
-	square_selector[i].addEventListener('click', function() {
-		console.log(this.style.backgroundColor);
-		if (this.style.backgroundColor != pickedColour) {
-			this.style.backgroundColor = bgcolour;
-			msg_select.textContent = 'Try again';
-		} else {
-			//RGB_title_select.style.color=pickedColour;
-			msg_select.textContent = 'Correct';
-			changeColours(pickedColour);
-			document.querySelector('h1').style.backgroundColor = pickedColour;
-			document.querySelector('button').textContent = 'Play again?';
-		}
+function init() {
+	// squares click logic
+	for (var i=0; i<square_selector.length; i++) {
+		// add click event listener
+		square_selector[i].addEventListener('click', function() {
+			console.log(this.style.backgroundColor);
+			if (this.style.backgroundColor != pickedColour) {
+				this.style.backgroundColor = bgcolour;
+				msg_select.textContent = 'Try again';
+			} else {
+				//RGB_title_select.style.color=pickedColour;
+				msg_select.textContent = 'Correct';
+				changeColours(pickedColour);
+				document.querySelector('h1').style.backgroundColor = pickedColour;
+				document.querySelector('button').textContent = 'Play again?';
+			}
+		});
+	}
+
+	// reset button event listener
+	document.querySelector('#resetBtn').addEventListener('click', function() {
+		reset();
 	});
+
+	// initialise colours
+	reset();
 }
 
-document.querySelector('#resetBtn').addEventListener('click', function() {
-	reset();
-});
 
 // click easy button
 document.getElementById('easyBtn').addEventListener('click', function() {
